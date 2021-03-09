@@ -3,10 +3,12 @@
  * @return {number[]}
  */
 var runningSum = function(nums) {
-  let sum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    sum = sum + nums[i];
-    nums[i] = sum;
-  }
-  return nums;
+    if (nums.length <= 1) {return nums;}
+
+	// iterate through array 
+    for (let i = 1; i < nums.length; i++){
+		// replace current value in array with summation of current value & value of previous index
+        nums[i] += nums[i-1];
+    }
+    return nums; // O(n) runtime using existing input array
 };
