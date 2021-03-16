@@ -3,8 +3,7 @@
  * @return {string[]}
  */
 var stringMatching = function(words) {
-  //loop thru each word in the array
-    //create an object of letters out of it
+
   let result = new Set();
     
   let hasSubstring = function (word1, word2) {
@@ -13,7 +12,6 @@ var stringMatching = function(words) {
       word2 = word1;
       word1 = temp;
     }
-    console.log(word1, word2)
     if (word1.includes(word2)) {
       result.add(word2);
     }
