@@ -5,7 +5,8 @@
 var stringMatching = function(words) {
 
   let result = new Set();
-    
+  //hi this is a comment
+  //and this is another comment
   let hasSubstring = function (word1, word2) {
     if (word1.length < word2.length) {
       let temp = word2;
