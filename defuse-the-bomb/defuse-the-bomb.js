@@ -18,7 +18,6 @@ var decrypt = function(code, k) {
   let sumDown = (array, start) => { 
     let sum = 0;
     for (let i = start + code.length - 1 ; i >= (start + code.length + k); i--) {
-      console.log(array[i], i)
       sum += array[i];
     }
     return sum;
