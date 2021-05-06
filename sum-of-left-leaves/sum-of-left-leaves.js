@@ -14,7 +14,6 @@ var sumOfLeftLeaves = function(root) {
   let sum = 0;
   
   let findSumLeft = (tree) => {
-          console.log(tree)
     if (!tree) { 
       return 0;
     }
