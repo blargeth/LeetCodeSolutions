@@ -18,7 +18,7 @@ CustomStack.prototype.push = function(x) {
     return;
   } else {
     this.stack.push(x);
-    console.log(this.stack, 'stack')
+    // console.log(this.stack, 'stack')
   }
   
 };
@@ -46,7 +46,7 @@ CustomStack.prototype.increment = function(k, val) {
   for (let i = 0; i < k; i++) {
     this.stack[i] += val;
   }
-  console.log(this.stack, 'stack')
+  // console.log(this.stack, 'stack')
 };
 
 /** 
