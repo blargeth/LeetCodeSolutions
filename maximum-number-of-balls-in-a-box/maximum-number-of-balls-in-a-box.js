@@ -19,7 +19,6 @@ var countBalls = function(lowLimit, highLimit) {
   
   for (let i = lowLimit; i <= highLimit; i++) {
     let sum = toDigitSum(i);
-    console.log(sum)
     if (!hashbrown[sum]) {
       hashbrown[sum] = 1
     } else {
