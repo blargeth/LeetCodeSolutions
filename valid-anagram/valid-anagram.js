@@ -22,10 +22,7 @@ var isAnagram = function(s, t) {
     } else {
       sObj[t[i]] -= 1;
     }
-    
   }
-  
-  console.log(sObj)
   
   for (let key in sObj) {
     if (sObj[key] !== 0) {
