@@ -5,7 +5,7 @@
  */
 var isAnagram = function(s, t) {
   let sObj = {};
-  let tObj = {};
+
   if (s.length !== t.length) {
     return false;
   }
@@ -17,16 +17,18 @@ var isAnagram = function(s, t) {
       sObj[s[i]] += 1;
     }
     
-    if (!tObj[t[i]]) {
-      tObj[t[i]] = 1;
+    if (!sObj[t[i]]) {
+      sObj[t[i]] = -1;
     } else {
-      tObj[t[i]] += 1;
+      sObj[t[i]] -= 1;
     }
     
   }
   
+  console.log(sObj)
+  
   for (let key in sObj) {
-    if (sObj[key] !== tObj[key]) {
+    if (sObj[key] !== 0) {
       return false;
     }
 
