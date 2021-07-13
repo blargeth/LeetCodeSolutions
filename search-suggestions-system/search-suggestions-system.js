@@ -15,7 +15,6 @@ var suggestedProducts = function(products, searchWord) {
   
   for (let i = 0; i < searchWord.length; i++) {
     products = products.filter( item => item[i] === searchWord[i])
-    console.log(products)
     result.push(products.slice(0, (products > 3) ? products.length : 3))
   }
   
