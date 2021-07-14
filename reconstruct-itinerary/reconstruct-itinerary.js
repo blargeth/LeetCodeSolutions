@@ -4,24 +4,19 @@
  */
 var findItinerary = function(tickets) {
   
+  
+  
+  
+  
+  
+  
+  
 
   /////////////SOLUTION!
   
   
-// [
-//   [ 'JFK', 'SFO' ],
-//   [ 'JFK', 'ATL' ],
-//   [ 'SFO', 'ATL' ],
-//   [ 'ATL', 'JFK' ],
-//   [ 'ATL', 'SFO' ]
-// ]
-
-  
-  
-  
-    // tickets.sort((a, b) => a[1].localeCompare(b[1]));
-  tickets.sort( (a,b) => a[1] < b[1] ? -1 : 1)
-
+    tickets.sort((a, b) => a[1] < b[1] ? -1 : 1);
+  // console.log(tickets)
     const matrix = {};
     
     // build an adjacency matrix
