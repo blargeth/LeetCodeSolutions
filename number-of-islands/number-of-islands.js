@@ -5,10 +5,48 @@
 var numIslands = function(grid) {
     
   
+  // loop thru each spot on the grid
+  // for each spot, do a recursive check that will:
+    // turn the 1 to a zero and then keep checking each spot in each direction
   
   
+  // result counter
+  // a helperfunction that will sink the islands - islandSinker
   
+  // i need boundaries for the grid - height and width
+    // if i am outside of the bounds 0 to width or 0 to height then continue going
   
+
+  const height = grid.length;
+  const width = height && grid[0].length;
+  
+  let counter = 0;
+  
+  const sinkIsland = ( row, col ) => {
+    if (row < 0 || row === height || col < 0 || col === width) return;
+    if (grid[row][col] === '0') return;
+    //else 
+    grid[row][col] = '0';
+    sinkIsland(row + 1,col)
+    sinkIsland(row - 1,col)
+    sinkIsland(row,col + 1)
+    sinkIsland(row,col - 1)
+    
+  }  
+  
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
+      // console.log(i, j, grid[i,j])
+      if (grid[i][j] === "1") {
+        // console.log('hi')
+        counter+=1;
+        sinkIsland( i, j );
+      }
+    }
+  }
+  
+  return counter;
+
   
   
   
@@ -41,32 +79,32 @@ var numIslands = function(grid) {
   // (r-1, c), (r+1, c), (r, c -1 ), (r, c + 1)  
   
   
-  const height = grid.length;
-  const width = height && grid[0].length;
+//   const height = grid.length;
+//   const width = height && grid[0].length;
   
-  const sinkIsland = ( row, col ) => {
-    if (row < 0 || row === height || col < 0 || col === width) return;
-    if (grid[row][col] === '0') return;
-    //else 
-    grid[row][col] = '0';
-    sinkIsland(row + 1,col)
-    sinkIsland(row - 1,col)
-    sinkIsland(row,col + 1)
-    sinkIsland(row,col - 1)
+//   const sinkIsland = ( row, col ) => {
+//     if (row < 0 || row === height || col < 0 || col === width) return;
+//     if (grid[row][col] === '0') return;
+//     //else 
+//     grid[row][col] = '0';
+//     sinkIsland(row + 1,col)
+//     sinkIsland(row - 1,col)
+//     sinkIsland(row,col + 1)
+//     sinkIsland(row,col - 1)
     
-  }  
+//   }  
   
-  let counter = 0;
+//   let counter = 0;
 
-  for (let i = 0; i < height; i++) {
-    for (let j = 0; j < width; j++) {
-      if (grid[i][j] === '0') continue;
-        counter+= 1;
-        sinkIsland(i,j);
-    }
-  }
+//   for (let i = 0; i < height; i++) {
+//     for (let j = 0; j < width; j++) {
+//       if (grid[i][j] === '0') continue;
+//         counter+= 1;
+//         sinkIsland(i,j);
+//     }
+//   }
   
-  return counter;
+//   return counter;
   
   
   
