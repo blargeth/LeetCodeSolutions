@@ -16,6 +16,6 @@ var removeDuplicates = function(nums) {
       dupes += 1;
     }
   }
-  console.log(counter)
+  // console.log(counter)
   return nums.length - dupes;
 };
